@@ -474,3 +474,67 @@ z-index:2;
 position:relative;
 
 }
+/* ===========================
+MENU HAMBURGER
+=========================== */
+
+.menu-toggle{
+display:none;
+font-size:34px;
+cursor:pointer;
+color:white;
+}
+
+/* Navbar saat discroll */
+
+.scrolled{
+
+background:#0D47A1 !important;
+
+box-shadow:0 8px 25px rgba(0,0,0,.2);
+
+transition:.4s;
+
+}
+
+@media(max-width:768px){
+
+.menu-toggle{
+
+display:block;
+
+}
+
+nav{
+
+display:none;
+
+flex-direction:column;
+
+background:#1565C0;
+
+position:absolute;
+
+top:80px;
+
+left:0;
+
+width:100%;
+
+padding:20px;
+
+}
+
+nav.show{
+
+display:flex;
+
+}
+
+nav a{
+
+margin:12px 0;
+
+}
+
+}
