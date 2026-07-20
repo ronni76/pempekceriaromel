@@ -153,3 +153,36 @@ nav a{
 }
 
 }
+#keunggulan{
+padding:70px 8%;
+background:#eef7ff;
+text-align:center;
+}
+
+#keunggulan h2{
+margin-bottom:40px;
+color:#1565c0;
+}
+
+.fitur{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.box{
+background:#fff;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.box:hover{
+transform:translateY(-8px);
+}
+
+.box h3{
+margin-bottom:12px;
+color:#1976d2;
+    }
