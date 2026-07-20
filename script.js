@@ -44,3 +44,32 @@ item.style.opacity="1";
 },700);
 
 });
+// Menu HP
+
+const toggle=document.getElementById("menu-toggle");
+
+const nav=document.getElementById("navbar");
+
+toggle.addEventListener("click",()=>{
+
+nav.classList.toggle("show");
+
+});
+
+// Navbar berubah warna saat scroll
+
+const header=document.getElementById("header");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>80){
+
+header.classList.add("scrolled");
+
+}else{
+
+header.classList.remove("scrolled");
+
+}
+
+});
