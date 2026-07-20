@@ -1,120 +1,212 @@
-window.addEventListener("load", () => {
+// =======================
+// MENU MOBILE
+// =======================
 
-document.body.style.opacity="1";
+const menuToggle = document.getElementById("menu-toggle");
+const navbar = document.getElementById("navbar");
 
-});
 
-const topBtn=document.getElementById("topBtn");
+menuToggle.addEventListener("click", () => {
 
-window.onscroll=function(){
-
-if(document.documentElement.scrollTop>300){
-
-topBtn.style.display="block";
-
-}else{
-
-topBtn.style.display="none";
-
-}
-
-}
-
-topBtn.onclick=function(){
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
+    navbar.classList.toggle("show");
 
 });
 
-}
-const angka=document.querySelectorAll(".stat-box h2");
 
-angka.forEach(item=>{
 
-item.style.opacity="0";
+// Tutup menu setelah klik link
 
-setTimeout(()=>{
+document.querySelectorAll("nav a").forEach(link => {
 
-item.style.opacity="1";
+    link.addEventListener("click", () => {
 
-},700);
+        navbar.classList.remove("show");
 
-});
-// Menu HP
-
-const toggle=document.getElementById("menu-toggle");
-
-const nav=document.getElementById("navbar");
-
-toggle.addEventListener("click",()=>{
-
-nav.classList.toggle("show");
+    });
 
 });
 
-// Navbar berubah warna saat scroll
 
-const header=document.getElementById("header");
+
+
+
+// =======================
+// HEADER SCROLL EFFECT
+// =======================
+
+const header = document.getElementById("header");
+
+
+window.addEventListener("scroll", () => {
+
+
+    if(window.scrollY > 50){
+
+        header.style.background = "#0d47a1";
+
+    }else{
+
+        header.style.background = "#1565c0";
+
+    }
+
+
+});
+
+
+
+
+
+
+// =======================
+// BACK TO TOP
+// =======================
+
+
+const topBtn = document.getElementById("topBtn");
+
 
 window.addEventListener("scroll",()=>{
 
-if(window.scrollY>80){
 
-header.classList.add("scrolled");
+    if(window.scrollY > 400){
 
-}else{
+        topBtn.style.display="block";
 
-header.classList.remove("scrolled");
+    }else{
+
+        topBtn.style.display="none";
+
+    }
+
+
+});
+
+
+
+topBtn.addEventListener("click",()=>{
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+
+});
+
+
+
+
+
+
+// =======================
+// DARK MODE
+// =======================
+
+
+const darkToggle = document.getElementById("dark-toggle");
+
+
+
+darkToggle.addEventListener("click",()=>{
+
+
+    document.body.classList.toggle("dark");
+
+
+
+    if(document.body.classList.contains("dark")){
+
+
+        darkToggle.textContent="☀️";
+
+
+        localStorage.setItem("darkMode","on");
+
+
+    }else{
+
+
+        darkToggle.textContent="🌙";
+
+
+        localStorage.setItem("darkMode","off");
+
+
+    }
+
+
+});
+
+
+
+
+
+// Cek mode terakhir pengguna
+
+
+if(localStorage.getItem("darkMode") === "on"){
+
+
+    document.body.classList.add("dark");
+
+
+    darkToggle.textContent="☀️";
+
 
 }
 
-});
-/* ===========================
-HERO SLIDER
-=========================== */
 
-const slides=document.querySelectorAll(".hero-slide");
 
-let current=0;
 
-setInterval(()=>{
 
-slides[current].classList.remove("active");
 
-current++;
 
-if(current>=slides.length){
+// =======================
+// SCROLL ANIMATION
+// =======================
 
-current=0;
 
-}
+const observer = new IntersectionObserver((entries)=>{
 
-slides[current].classList.add("active");
 
-},4000);
+    entries.forEach(entry=>{
 
-/* ===========================
-ANIMASI CARD
-=========================== */
 
-const cards=document.querySelectorAll(".card");
+        if(entry.isIntersecting){
 
-cards.forEach(card=>{
 
-card.addEventListener("mouseenter",()=>{
+            entry.target.classList.add("show");
 
-card.style.transform="translateY(-10px)";
+
+        }
+
+
+    });
+
+
+},{
+
+
+    threshold:0.15
+
 
 });
 
-card.addEventListener("mouseleave",()=>{
 
-card.style.transform="translateY(0)";
 
-});
+document.querySelectorAll(
+
+".card, .box, .testi-card, .faq-item, .trust-item"
+
+).forEach(el=>{
+
+
+    observer.observe(el);
+
 
 });
