@@ -31,3 +31,16 @@ behavior:"smooth"
 });
 
 }
+const angka=document.querySelectorAll(".stat-box h2");
+
+angka.forEach(item=>{
+
+item.style.opacity="0";
+
+setTimeout(()=>{
+
+item.style.opacity="1";
+
+},700);
+
+});
