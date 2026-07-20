@@ -6,6 +6,8 @@
 }
 
 body{
+    opacity:0;
+    transition:1s;
     background:#f5f9ff;
     color:#333;
     line-height:1.6;
