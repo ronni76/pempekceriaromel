@@ -223,3 +223,52 @@ color:#1976d2;
 .item:hover img{
     transform:scale(1.08);
 }
+
+/* ===========================
+   TESTIMONI
+=========================== */
+
+#testimoni{
+    padding:70px 8%;
+    background:#eef7ff;
+}
+
+#testimoni h2{
+    text-align:center;
+    margin-bottom:40px;
+    color:#1565c0;
+}
+
+.testimoni-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.testi-card{
+    background:#fff;
+    padding:25px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.testi-card:hover{
+    transform:translateY(-8px);
+}
+
+.bintang{
+    color:#FFC107;
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+.testi-card p{
+    margin-bottom:20px;
+    color:#555;
+}
+
+.testi-card h4{
+    color:#1565c0;
+}
