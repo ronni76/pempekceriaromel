@@ -1,11 +1,33 @@
-// Efek muncul saat halaman dibuka
 window.addEventListener("load", () => {
-    document.body.style.opacity = "1";
+
+document.body.style.opacity="1";
+
 });
 
-// Efek klik tombol WhatsApp
-document.querySelectorAll(".btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-        console.log("Pengunjung menekan tombol pesan");
-    });
+const topBtn=document.getElementById("topBtn");
+
+window.onscroll=function(){
+
+if(document.documentElement.scrollTop>300){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+}
+
+topBtn.onclick=function(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
 });
+
+}
