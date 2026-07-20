@@ -1342,3 +1342,22 @@ font-size:27px;
 
 
     }
+
+.hidden{
+
+opacity:0;
+
+transform:translateY(30px);
+
+transition:.6s;
+
+}
+
+
+.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
