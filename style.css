@@ -386,3 +386,98 @@ display:none;
 box-shadow:0 5px 15px rgba(0,0,0,.25);
 
 }
+/* =======================
+PROMO
+======================= */
+
+#promo{
+
+padding:25px 8%;
+
+background:#ff9800;
+
+color:white;
+
+text-align:center;
+
+font-size:24px;
+
+font-weight:bold;
+
+}
+
+.promo-box{
+
+animation:promo 10s linear infinite;
+
+}
+
+@keyframes promo{
+
+0%{transform:translateX(100%);}
+
+100%{transform:translateX(-100%);}
+
+}
+
+/* =======================
+STATISTIK
+======================= */
+
+#statistik{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+padding:60px 8%;
+
+background:#1565c0;
+
+color:white;
+
+text-align:center;
+
+}
+
+.stat-box h2{
+
+font-size:42px;
+
+}
+
+.stat-box p{
+
+margin-top:10px;
+
+}
+
+/* =======================
+BADGE
+======================= */
+
+.badge{
+
+position:absolute;
+
+margin:15px;
+
+background:red;
+
+color:white;
+
+padding:8px 14px;
+
+border-radius:30px;
+
+font-size:12px;
+
+font-weight:bold;
+
+}
+
+.card{
+
+position:relative;
+
+}
