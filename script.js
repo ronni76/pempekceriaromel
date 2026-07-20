@@ -73,3 +73,48 @@ header.classList.remove("scrolled");
 }
 
 });
+/* ===========================
+HERO SLIDER
+=========================== */
+
+const slides=document.querySelectorAll(".hero-slide");
+
+let current=0;
+
+setInterval(()=>{
+
+slides[current].classList.remove("active");
+
+current++;
+
+if(current>=slides.length){
+
+current=0;
+
+}
+
+slides[current].classList.add("active");
+
+},4000);
+
+/* ===========================
+ANIMASI CARD
+=========================== */
+
+const cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+card.addEventListener("mouseenter",()=>{
+
+card.style.transform="translateY(-10px)";
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform="translateY(0)";
+
+});
+
+});
